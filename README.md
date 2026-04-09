@@ -107,6 +107,13 @@ You can view the live preview of the project [here](https://women-safety-platfor
 
    ```bash
    PORT=3000
+   MONGO=<your_mongo_connection_string>
+   ```
+
+   You can use either a local MongoDB instance or a MongoDB Atlas URI. For Atlas, use the full connection string provided by Atlas, for example:
+
+   ```bash
+   MONGO=mongodb+srv://<username>:<password>@cluster0.mongodb.net/women-safety-app?retryWrites=true&w=majority
    ```
 
 4. **Install dependencies:**

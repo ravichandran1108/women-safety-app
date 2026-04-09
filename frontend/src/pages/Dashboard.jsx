@@ -1,7 +1,8 @@
 import Header from '../components/shared/Header';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
-import { HiOutlineUser, HiOutlineShieldCheck, HiOutlineMap, HiOutlineDocumentText, HiOutlineBell, HiOutlineLightBulb, HiOutlineLocationMarker, HiOutlineUsers, HiOutlineExclamationTriangle, HiOutlineGlobe } from "react-icons/hi";
+import { HiOutlineUser, HiOutlineShieldCheck, HiOutlineMap, HiOutlineDocumentText, HiOutlineBell, HiOutlineLightBulb, HiOutlineLocationMarker, HiOutlineUsers, HiOutlineGlobe } from "react-icons/hi";
+import { HiOutlineExclamationTriangle } from "react-icons/hi2";
 
 const Dashboard = () => {
   const navigate = useNavigate();

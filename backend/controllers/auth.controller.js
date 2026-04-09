@@ -49,7 +49,11 @@ export const userSignin = async(req,res,next)=>{
             return next(errorHandler(400, 'Invalid password'));
         }
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY,);
+        if (!process.env.JWT_SECRET_KEY) {
+            return next(errorHandler(500, 'JWT secret is not configured. Set JWT_SECRET_KEY in backend/.env and restart the backend.'));
+        }
+
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY);
 
         const { password :pass, ...rest} = user._doc
 
