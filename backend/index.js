@@ -40,11 +40,17 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'https://women-safety-platform.vercel.app',
+  'https://women-safety-app-weld.vercel.app',
 ];
 
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin) || origin?.startsWith('http://localhost:')) {
+    if (
+      !origin ||
+      allowedOrigins.includes(origin) ||
+      origin?.startsWith('http://localhost:') ||
+      origin?.endsWith('.vercel.app')
+    ) {
       callback(null, true);
     } else {
       callback(new Error(`Not allowed by CORS: ${origin}`));
